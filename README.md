@@ -84,11 +84,11 @@ Dataverse also adds system columns such as Created On and Owner.
 
 | # | Test | Steps | Expected result | Actual result | Pass / Fail |
 |---|---|---|---|---|---|
-| 1 | Create a ticket | Click New, fill in all fields except Resolution notes, Save | Ticket appears in Active Tickets | | |
-| 2 | Confirmation email sent | Create a ticket using my own email as Requester email | Flow 1 runs and a confirmation email arrives | | |
-| 3 | Confirmation email content | Open the email from test 2 | Subject and body show the correct ticket title | | |
-| 4 | Status to In Progress | Change a ticket's Status to In Progress, Save | Flow 2 runs, condition is false, no email sent | | |
-| 5 | Status to Resolved | Change a ticket's Status to Resolved and add Resolution notes, Save | Flow 2 runs, condition is true, resolved email arrives | | |
+| 1 | Create a ticket | Click New, fill in all fields except Resolution notes, Save | Ticket appears in Active Tickets | Ticket saved and appeared in the Active Tickets list | Pass |
+| 2 | Confirmation email sent | Create a ticket using my own email as Requester email | Flow 1 runs and a confirmation email arrives | Flow 1 ran successfully and the confirmation email arrived | Pass |
+| 3 | Confirmation email content | Open the email from test 2 | Subject and body show the correct ticket title | Subject and body showed the correct ticket title | Pass |
+| 4 | Status to In Progress | Change a ticket's Status to In Progress, Save | Flow 2 runs, condition is false, no email sent | Flow 2 ran, the condition returned false and no email was sent | Pass |
+| 5 | Status to Resolved | Change a ticket's Status to Resolved and add Resolution notes, Save | Flow 2 runs, condition is true, resolved email arrives | Flow 2 ran, the condition returned true and the resolved email arrived | Pass |
 | 6 | Resolved email content | Open the email from test 5 | Subject shows the ticket title and body shows the Resolution notes | First run: the body showed the label but no notes. Fixed by inserting the Resolution notes field into the email body, then re-tested: the notes now appear | Fail, fixed, re-tested: Pass |
 | 7 | Edit without a status change | Edit only the Description of a ticket, Save | Flow 2 does not run (Select columns filter) | No new run appeared in the run history after waiting; a Status change on the same ticket did start a run | Pass |
 | 8 | Missing requester email | Create a ticket with the Requester email empty | Note the result, for example a flow failure | First run: the ticket saved and Flow 1 failed at the Gmail step ("Provide at least one email address"). Fixed by making Requester email a required column. Re-tested: the form now blocks saving and shows a required-field message | Fail, fixed, re-tested: Pass |
