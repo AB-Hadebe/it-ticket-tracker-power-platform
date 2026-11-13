@@ -48,6 +48,8 @@ I built this to practise the day-to-day work of a junior Power Platform develope
 
 ![Resolved email received](screenshots/email-resolved.png)
 
+![Required-field validation on Requester email](screenshots/requester-email-required.png)
+
 ## Data model
 
 **Table: Tickets** (Dataverse)
