@@ -93,7 +93,7 @@ Dataverse also adds system columns such as Created On and Owner.
 | 7 | Edit without a status change | Edit only the Description of a ticket, Save | Flow 2 does not run (Select columns filter) | No new run appeared in the run history after waiting; a Status change on the same ticket did start a run | Pass |
 | 8 | Missing requester email | Create a ticket with the Requester email empty | Note the result, for example a flow failure | First run: the ticket saved and Flow 1 failed at the Gmail step ("Provide at least one email address"). Fixed by making Requester email a required column. Re-tested: the form now blocks saving and shows a required-field message | Fail, fixed, re-tested: Pass |
 | 9 | All choice values available | Open the form and check each choice dropdown | Category, Priority and Status show the correct options | Category showed Hardware, Software, Access and Other. Priority showed Low, Medium and High. Status showed New, In Progress and Resolved | Pass |
-| 10 | Regression check | After any change to a flow or form, repeat tests 1, 2 and 5 | All still pass | | |
+| 10 | Regression check | After any change to a flow or form, repeat tests 1, 2 and 5 | All still pass | After making Requester email required and adding Resolution notes to the resolved email, I created a new ticket and resolved it. The ticket saved, the confirmation email arrived, and the resolved email arrived with the note. Both flow runs succeeded | Pass |
 
 ## Issues encountered and how I solved them
 
