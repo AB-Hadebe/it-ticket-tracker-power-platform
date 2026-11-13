@@ -87,7 +87,7 @@ Dataverse also adds system columns such as Created On and Owner.
 | 3 | Confirmation email content | Open the email from test 2 | Subject and body show the correct ticket title | | |
 | 4 | Status to In Progress | Change a ticket's Status to In Progress, Save | Flow 2 runs, condition is false, no email sent | | |
 | 5 | Status to Resolved | Change a ticket's Status to Resolved and add Resolution notes, Save | Flow 2 runs, condition is true, resolved email arrives | | |
-| 6 | Resolved email content | Open the email from test 5 | Subject shows the ticket title and body shows the Resolution notes | | |
+| 6 | Resolved email content | Open the email from test 5 | Subject shows the ticket title and body shows the Resolution notes | First run: the body showed the label but no notes. Fixed by inserting the Resolution notes field into the email body, then re-tested: the notes now appear | Fail, fixed, re-tested: Pass |
 | 7 | Edit without a status change | Edit only the Description of a ticket, Save | Flow 2 does not run (Select columns filter) | | |
 | 8 | Missing requester email | Create a ticket with the Requester email empty | Note the result, for example a flow failure | | |
 | 9 | All choice values available | Open the form and check each choice dropdown | Category, Priority and Status show the correct options | | |
