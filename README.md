@@ -107,6 +107,8 @@ Dataverse also adds system columns such as Created On and Owner.
 | Gmail connection failed ("insufficient authentication scopes") | Not all Google permissions were granted at the consent screen | Retried the sign-in and ticked every requested permission |
 | Condition option showed only "Status Reason" | Status Reason is a built-in system column, not my Status choice column | Matched on the choice value (`259830002`) from the trigger output |
 | Typed text sent the same email for every ticket | Email fields contained fixed text instead of dynamic content | Replaced them with Requester email and Title from dynamic content |
+| Flow 1 failed when a ticket had no requester email | Requester email was optional, so the Gmail step had no To address | Made Requester email a required column and re-tested; the form now blocks saving |
+| Resolved email did not show the Resolution notes | The Resolution notes field was typed as a label but never inserted into the email body | Inserted the Resolution notes field from dynamic content into the Gmail body and re-tested |
 
 ## Known limitations
 
